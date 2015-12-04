@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<HEAD>
+<TITLE>text_to_html</TITLE>
+<style type="text/css">
+input {
+ width: 100%;
+ height: 40px;
+ font-size: 28px;
+ word-break: break-all;
+ display: block;
+ border: 0;
+ padding-top: 0;
+ margin-top: 0;
+}
+.quote {
+ width: 100%;
+ word-break: break-all;
+ display: block;
+ border-left: 3px solid green;
+}
+._hr {
+  border: 1;
+  padding-top: 0;
+  margin-top: 0;
+}
+</style>
+<script type="text/javascript">
+function checkField(id, val){
+  if (id == "picture") {
+    document.getElementById("out_"+id).src = val;
+  }else {
+    document.getElementById("out_"+id).innerHTML = val;
+  }
+}
+</script>
+</HEAD>
+<body>
+<div id="container" style="width: 100%;height: auto; background: black;">
+
+  <div id="out_html" style="width: 50%;height: auto; margin:0 auto; float:left;">
+    <h1 id="out_title"></h1>
+    <p id="out_paragraph"></p>
+    <img id="out_picture">
+    <p id="out_quote" class="quote"></p>
+  </div>
+
+  <div id="inmd" style="width: 50%;height: auto; float:left;">
+    <p>#标题#</p>
+    <input type="text" id="title" onchange="checkField(this.id, this.value)" /><hr class="_hr">
+    <p>#段落#</p>
+    <input type="text" id="paragraph" onchange="checkField(this.id, this.value)" /><hr class="_hr">
+    <p>#图片#</p>
+    <input type="text" id="picture" onchange="checkField(this.id, this.value)" /><hr class="_hr">
+    <p>#引用#</p>
+    <input type="text" id="quote" onchange="checkField(this.id, this.value)" /><hr class="_hr">
+  </div>
+
+</div>
+</body>
+</html>
