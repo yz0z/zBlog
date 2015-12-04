@@ -1,3 +1,8 @@
+---
+layout: default
+title: Hi, GitHub!
+---
+
 <!DOCTYPE HTML>
 <html>
 <HEAD>
@@ -36,6 +41,9 @@ function checkField(id, val){
 </script>
 </HEAD>
 <body>
+ 
+<h2>{{ page.title }}</h2>
+ 
 <div id="container" style="width: 100%;height: auto; background: black;">
 
   <div id="out_html" style="width: 50%;height: auto; margin:0 auto; float:left;">
@@ -57,5 +65,6 @@ function checkField(id, val){
   </div>
 
 </div>
+<p>{{ page.date | date_to_string }}</p>
 </body>
 </html>
